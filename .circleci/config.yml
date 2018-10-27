@@ -1,0 +1,46 @@
+version: 2
+jobs:
+  lint:
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: app-cache-v1-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: |
+            npm install
+      - save_cache:
+          key: app-cache-v1-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Lint code
+          command: |
+            npm run lint
+  coverage:
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: app-cache-v1-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: |
+            npm install
+      - save_cache:
+          key: app-cache-v1-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Lint code
+          command: |
+            npm run coverage
+workflows:
+  version: 2
+  commit-workflow:
+    jobs:
+      - lint
+      - coverage

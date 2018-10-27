@@ -1,0 +1,26 @@
+{
+  "name": "aircall-call-infos",
+  "version": "0.0.1",
+  "description": "Send infos to Aircall for current calls",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development node index.js",
+    "lint": "echo TODO",
+    "coverage": "echo TODO"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hereismass/aircall-call-infos.git"
+  },
+  "author": "Massimo Zambelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hereismass/aircall-call-infos/issues"
+  },
+  "homepage": "https://github.com/hereismass/aircall-call-infos#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4"
+  }
+}
