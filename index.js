@@ -4,10 +4,11 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 
-console.log(process.env.NODE_ENV);
+let PORT = 80;
 
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').load();
+    PORT = 3000;
 }
 
 app.get('/', function (req, res) {
@@ -27,6 +28,6 @@ app.post('/aircall/calls', (req, res) => {
 res.sendStatus(200);
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(PORT, function () {
+  console.log('App running!')
 })
