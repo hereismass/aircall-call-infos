@@ -20,7 +20,7 @@
   },
   "engines": {
     "node": "11.0.0"
-  }
+  },
   "homepage": "https://github.com/hereismass/aircall-call-infos#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
