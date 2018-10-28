@@ -1,1 +1,1 @@
-web: npm run production
+web: NODE_PORT=$PORT npm run production
